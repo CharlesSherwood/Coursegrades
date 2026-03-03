@@ -108,7 +108,21 @@ void AssignLetterGrades(Student* students, int numStudents)
 
 void PrintReport(const Student* students, int numStudents, int numTests)
 {
+    cout << "\nCOURSE GRADE REPORT\n";
+    cout << "---------------------------";
 
+    cout << left << setw(15) << "Last Name" << setw(12) << "Student ID"
+        << setw(10) << "Average" << setw(6) << "Grade" << endl;
+
+    cout << "----------------------------------";
+
+    for (int i; i < numStudents; i++)
+    {
+        cout << left << setw(15) << students[i].lastName << setw(12) << students[i].studentID
+            << setw(10) << fixed << setprecision(2) << students[i].average
+            << setw(6) << students[i].letterGrade << endl;
+    }
+cout <<"----------------------------------";
 }
 
 void DeallocateMemory(Student*& students, int numStudents)
