@@ -30,13 +30,30 @@ void AssignLetterGrades(Student* students, int numStudents);
 void PrintReport(const Student* students, int numStudents, int numTests);
 void DeallocateMemory(Student*& students, int numStudents);
 
-
 int main()
 {
+    string filename;
+    Student* students = nullptr;
+    int numStudents = 0;
+    int numTests = 0;
 
+    cout << "Enter input filename: ";
+    cin >> filename;
 
+    if (!ReadFile(filename, students, numStudents, numTests))
+    {
+        cout << "Error opening file.\n";
+        return 1;
+    }
 
+    CalculateAverages(students, numStudents, numTests);
+    AssignLetterGrades(students, numStudents);
+    PrintReport(students, numStudents, numTests);
+    DeallocateMemory(students, numStudents);
+
+    return 0;
 }
+
 
 bool ReadFile(const string& filename, Student*& students,
     int& numStudents, int& numTests)
@@ -75,7 +92,7 @@ bool ReadFile(const string& filename, Student*& students,
 
 void CalculateAverages(Student* students, int numStudents, int numTests)
 {
-    for (int i; i < numStudents; i++)
+    for (int i=0; i < numStudents; i++)
     {
         double sum = 0;
         for(int j=0;j<numTests;j++)
@@ -116,7 +133,7 @@ void PrintReport(const Student* students, int numStudents, int numTests)
 
     cout << "----------------------------------";
 
-    for (int i; i < numStudents; i++)
+    for (int i=0; i < numStudents; i++)
     {
         cout << left << setw(15) << students[i].lastName << setw(12) << students[i].studentID
             << setw(10) << fixed << setprecision(2) << students[i].average
@@ -127,7 +144,7 @@ cout <<"----------------------------------";
 
 void DeallocateMemory(Student*& students, int numStudents)
 {
-    for (int i; i < numStudents; i++)
+    for (int i=0; i < numStudents; i++)
     {
         delete[] students[i].testScores;
 
