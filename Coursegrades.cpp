@@ -106,11 +106,6 @@ void AssignLetterGrades(Student* students, int numStudents)
     }
 }
 
-void AssignLetterGrades(Student* students, int numStudents)
-{
-
-}
-
 void PrintReport(const Student* students, int numStudents, int numTests)
 {
 
