@@ -127,5 +127,11 @@ cout <<"----------------------------------";
 
 void DeallocateMemory(Student*& students, int numStudents)
 {
+    for (int i; i < numStudents; i++)
+    {
+        delete[] students[i].testScores;
 
+    }
+    delete[]students;
+    students = nullptr;
 }
