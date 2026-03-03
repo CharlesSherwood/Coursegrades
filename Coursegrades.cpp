@@ -23,15 +23,77 @@ struct Student
 };
 
 //Create Prototypes 
-bool ReadFile();
-void CalculateAverages();
-void AssignLetterGrades();
-void PrintReport();
-void DeallocateMemory();
+bool ReadFile(const string& filename, Student*& students,
+    int& numStudents, int& numTests);
+void CalculateAverages(Student* students, int numStudents, int numTests);
+void AssignLetterGrades(Student* students, int numStudents);
+void PrintReport(const Student* students, int numStudents, int numTests);
+void DeallocateMemory(Student*& students, int numStudents);
+
 
 int main()
 {
 
 
+
+}
+
+bool ReadFile(const string& filename, Student*& students,
+    int& numStudents, int& numTests)
+{
+    ifstream infile(filename);
+
+    if (!infile)
+        return false;
+
+    // Read header
+    infile >> numStudents >> numTests;
+
+    // Allocate student array
+    students = new Student[numStudents];
+
+    for (int i = 0; i < numStudents; i++)
+    {
+        infile >> students[i].lastName;
+        infile >> students[i].studentID;
+
+        // Allocate test scores array for each student
+        students[i].testScores = new double[numTests];
+
+        for (int j = 0; j < numTests; j++)
+        {
+            infile >> students[i].testScores[j];
+        }
+
+        students[i].average = 0.0;
+        students[i].letterGrade = 'F';
+    }
+
+    infile.close();
+    return true;
+}
+
+void CalculateAverages(Student* students, int numStudents, int numTests)
+{
+
+}
+
+void AssignLetterGrades(Student* students, int numStudents)
+{
+
+}
+
+void AssignLetterGrades(Student* students, int numStudents)
+{
+
+}
+
+void PrintReport(const Student* students, int numStudents, int numTests)
+{
+
+}
+
+void DeallocateMemory(Student*& students, int numStudents)
+{
 
 }
