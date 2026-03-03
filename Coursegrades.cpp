@@ -13,6 +13,15 @@ output a formatted course grade report
 #include<string>
 using namespace std;
 
+struct Student
+{
+	string lastName;
+	int studentID;
+	double* testScores;
+	double average;
+	char letterGrade;
+};
+
 //Create Prototypes 
 bool ReadFile();
 void CalculateAverages();
