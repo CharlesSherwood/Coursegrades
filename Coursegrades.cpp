@@ -89,7 +89,21 @@ void CalculateAverages(Student* students, int numStudents, int numTests)
 
 void AssignLetterGrades(Student* students, int numStudents)
 {
+    for (int i = 0; i < numStudents; i++)
+    {
+           double avg = students[i].average;
 
+           if (avg >= 90)
+               students[i].letterGrade = 'A';
+           else if (avg >= 80)
+               students[i].letterGrade = 'B';
+           else if (avg >= 70)
+               students[i].letterGrade = 'C';
+           else if (avg >= 60)
+               students[i].letterGrade = 'D';
+           else
+               students[i].letterGrade = 'F';
+    }
 }
 
 void AssignLetterGrades(Student* students, int numStudents)
