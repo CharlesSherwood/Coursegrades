@@ -75,6 +75,15 @@ bool ReadFile(const string& filename, Student*& students,
 
 void CalculateAverages(Student* students, int numStudents, int numTests)
 {
+    for (int i; i < numStudents; i++)
+    {
+        double sum = 0;
+        for(int j=0;j<numTests;j++)
+        {
+            sum += students[i].testScores[j];
+        }
+        students[i].average = sum / numTests;
+    }
 
 }
 
