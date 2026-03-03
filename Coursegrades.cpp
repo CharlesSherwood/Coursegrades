@@ -8,9 +8,21 @@ output a formatted course grade report
 */
 
 #include <iostream>
+#include<fstream>
+#include<iomanip>
+#include<string>
 using namespace std;
+
+//Create Prototypes 
+bool ReadFile();
+void CalculateAverages();
+void AssignLetterGrades();
+void PrintReport();
+void DeallocateMemory();
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+
+
 }
