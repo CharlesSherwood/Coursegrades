@@ -38,7 +38,7 @@ int main()
     int numTests = 0;
 
     cout << "Enter input filename: ";
-    cin >> filename;
+    getline(cin, filename);
 
     if (!ReadFile(filename, students, numStudents, numTests))
     {
