@@ -126,12 +126,14 @@ void AssignLetterGrades(Student* students, int numStudents)
 void PrintReport(const Student* students, int numStudents, int numTests)
 {
     cout << "\nCOURSE GRADE REPORT\n";
-    cout << "---------------------------";
+    cout << "----------------------------------";
+    cout << endl;
 
     cout << left << setw(15) << "Last Name" << setw(12) << "Student ID"
         << setw(10) << "Average" << setw(6) << "Grade" << endl;
 
     cout << "----------------------------------";
+    cout << endl;
 
     for (int i=0; i < numStudents; i++)
     {
