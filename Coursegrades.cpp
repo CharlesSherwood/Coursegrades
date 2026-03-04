@@ -13,6 +13,7 @@ output a formatted course grade report
 #include<string>
 using namespace std;
 
+//Create Struct
 struct Student
 {
 	string lastName;
@@ -37,6 +38,7 @@ int main()
     int numStudents = 0;
     int numTests = 0;
 
+    //Get gilename from user using getline to account for spaces 
     cout << "Enter input filename: ";
     getline(cin, filename);
 
